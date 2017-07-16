@@ -13,34 +13,25 @@ import {
 } from 'react-native';
 
 import TextComponent from './application/components/Text';
+import CounterComponent from './application/components/Counter';
 
 export default class schooOfNetReactNative extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={SYTLES.view}>
              <TextComponent MyText= "Hello world"> </TextComponent>
+             <CounterComponent></CounterComponent>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
+const SYTLES = StyleSheet.create({
+  view:{
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    alignItems: 'center'
+  }
 });
 
 AppRegistry.registerComponent('schooOfNetReactNative', () => schooOfNetReactNative);
