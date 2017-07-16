@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Button, View, Alert, StyleSheet } from 'react-native';
-import STYLES from './Counter.styles'
+import STYLES from '../styles/Counter.styles'
 export default class CounterComponent extends Component {
     constructor() {
         super();

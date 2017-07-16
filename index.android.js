@@ -14,15 +14,13 @@ import {
 
 import TextComponent from './application/components/Text';
 import CounterComponent from './application/components/Counter';
-
+import InitRouter from './application/routers/InitRouter'
 export default class schooOfNetReactNative extends Component {
   render() {
+
     return (
-      <View style={SYTLES.view}>
-             <TextComponent MyText= "Hello world"> </TextComponent>
-             <CounterComponent></CounterComponent>
-      </View>
-    );
+      <InitRouter />
+    )
   }
 }
 
