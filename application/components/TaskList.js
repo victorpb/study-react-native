@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Button, Alert } from 'react-native';
+import { View, Text, TextInput, Button, Alert, ListView, } from 'react-native';
+
+import LsView from './LsView'
 
 export default class TaskList extends Component {
     constructor() {
         super();
+
+         this.ds = new ListView.DataSource({
+            rowHasChanged: (row1, row2) => row1 !== row2
+        })
+
         this.state = {
             todoTxt: '',
-            todos: []
+            todos: [],
+            dataSource: this.ds.cloneWithRows([])
         }
     }
 
@@ -24,14 +32,8 @@ export default class TaskList extends Component {
 
                 <Button title='Add' onPress={this.save}>
                 </Button>
-                <View>
-                    {this.state.todos.map((item, key) => (
-                        <Text key={key} >
-                            {item}
-                        </Text>
-                    ))}
-
-                </View>
+               
+                <LsView dataSource={this.state.dataSource}/>
             </View>
 
 
@@ -54,6 +56,7 @@ export default class TaskList extends Component {
         this.setState({
             todoTxt: '',
             todos: this.state.todos,
+            dataSource: this.ds.cloneWithRows(this.state.todos)
         });
     }
 }
