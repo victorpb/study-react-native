@@ -14,6 +14,7 @@ export default class HomePage extends Component {
                     {this.props.data}
                 </Text>
                 <Button title = 'Go to about' onPress={this.goToMyAboutPage}> </Button>
+                <Button title = 'Go to TaskList' onPress={this.goToTaskList}> </Button>
             </View>
         );
     }
@@ -25,6 +26,14 @@ export default class HomePage extends Component {
             passProps: {
                 data: 'This is my data from home page'
             }
+        })
+    }
+
+    goToTaskList = () => {
+        this.props.navigator.push({
+            name: 'TaskList',
+            title: 'My Task list',
+            passProps: {}
         })
     }
 }

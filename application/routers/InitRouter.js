@@ -3,6 +3,7 @@ import { Navigator } from 'react-native-deprecated-custom-components'
 
 import HomePage from '../components/HomePage';
 import AboutPage from '../components/AboutPage';
+import TaskList from '../components/TaskList';
 
 export default class InitRouter extends Component {
     constructor() {
@@ -35,6 +36,16 @@ export default class InitRouter extends Component {
                     navigator={navigator}
                     {...router.passProps} 
                     title='About'/>
+
+            );
+        }
+        
+        if (router.name == 'TaskList') {
+            return (
+                <TaskList
+                    navigator={navigator}
+                    {...router.passProps} 
+                    title='My Task list'/>
 
             );
         }
