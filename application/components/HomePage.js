@@ -1,21 +1,39 @@
 import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
 
 export default class HomePage extends Component {
-    constructor(){
+    constructor() {
         super();
     }
 
-    render(){
+    render() {
         return (
             <View>
                 <Text>
                     Hello this is my home page
                     {this.props.data}
                 </Text>
-                <Button title = 'Go to about' onPress={this.goToMyAboutPage}> </Button>
-                <Button title = 'Go to TaskList' onPress={this.goToMyTaskList}> </Button>
-                <Button title = 'Fetch' onPress={this.goToMyFetchPage}> </Button>
+                <TouchableHighlight>
+                    <Text>HighLight</Text>
+                </TouchableHighlight>
+
+                <TouchableOpacity>
+                    <Text>Opacity</Text>
+                </TouchableOpacity>
+
+                <TouchableNativeFeedback>
+                    <Text>Native Feedback</Text>
+                </TouchableNativeFeedback>
+
+                 <TouchableWithoutFeedback>
+                     <View>
+                        <Text>Without</Text>
+                    </View>
+                </TouchableWithoutFeedback> 
+
+                <Button title='Go to about' onPress={this.goToMyAboutPage}> </Button>
+                <Button title='Go to TaskList' onPress={this.goToMyTaskList}> </Button>
+                <Button title='Fetch' onPress={this.goToMyFetchPage}> </Button>
             </View>
         );
     }
