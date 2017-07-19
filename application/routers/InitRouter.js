@@ -4,6 +4,7 @@ import { Navigator } from 'react-native-deprecated-custom-components'
 import HomePage from '../components/HomePage';
 import AboutPage from '../components/AboutPage';
 import TaskList from '../components/TaskList';
+import FetchPage from '../components/FetchPage';
 
 export default class InitRouter extends Component {
     constructor() {
@@ -49,5 +50,16 @@ export default class InitRouter extends Component {
 
             );
         }
+
+        if (router.name == 'HTTP') {
+            return (
+                <FetchPage
+                    navigator={navigator}
+                    {...router.passProps} 
+                    title='Fetch'/>
+
+            );
+        }
+        
     }
 }

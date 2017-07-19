@@ -15,7 +15,7 @@ export default class HomePage extends Component {
                 </Text>
 
                 <Button 
-                    title = 'Go to about' 
+                    title = 'Go to Home' 
                     onPress={this.goToMyHomePage}>
                 </Button>
 

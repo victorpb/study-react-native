@@ -14,7 +14,8 @@ export default class HomePage extends Component {
                     {this.props.data}
                 </Text>
                 <Button title = 'Go to about' onPress={this.goToMyAboutPage}> </Button>
-                <Button title = 'Go to TaskList' onPress={this.goToTaskList}> </Button>
+                <Button title = 'Go to TaskList' onPress={this.goToMyTaskList}> </Button>
+                <Button title = 'Fetch' onPress={this.goToMyFetchPage}> </Button>
             </View>
         );
     }
@@ -29,10 +30,18 @@ export default class HomePage extends Component {
         })
     }
 
-    goToTaskList = () => {
+    goToMyTaskList = () => {
         this.props.navigator.push({
             name: 'TaskList',
             title: 'My Task list',
+            passProps: {}
+        })
+    }
+
+    goToMyFetchPage = () => {
+        this.props.navigator.push({
+            name: 'HTTP',
+            title: 'Fetch',
             passProps: {}
         })
     }
